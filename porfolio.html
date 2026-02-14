@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="porfolio.css" />
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+  <body>
+    <header>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h1>About Me</h1>
+        <figure class="profile-figure">
+          <img src="bro.jpg" alt="Profile photo" class="profile-image" />
+          <figcaption>Moreno, Dennis B. Jr.</figcaption>
+        </figure>
+        <p class="about-text">
+          I am a student with an interest in programming, technology, and game development. I enjoy learning
+          through hands-on practice, especially working with game mechanics, scripting, and problem-solving.
+          Because of my skills and continuous learning, I have the opportunity to become a game developer.
+        </p>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <ol class="education-list">
+          <li>High School Graduate (2021)</li>
+          <li>Senior High Graduate (2024)</li>
+          <li>BSIT - USTP (2024-2028)</li>
+        </ol>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li>Python Programming (Fundamentals & Logic)</li>
+          <li>Game Scripting & Mechanics (NPCs, Combat, Tools)</li>
+          <li>Problem Solving & Debugging</li>
+          <li>Basic Algorithms & Flowcharts</li>
+          <li>PC Troubleshooting & System Setup</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+          <article class="project-card">
+            <h3>Roblox Game Script</h3>
+            <p>Developed custom game mechanics including NPC behavior, combat systems, and boss interactions. Implemented tools and weapons with scripted damage, range detection, and player interaction. Worked with workspace structure, humanoids, and BasePart detection to improve gameplay logic.</p>
+            <p class="project-tech">Technologies: Python</p>
+          </article>
+
+          <article class="project-card">
+            <h3>Roblox Combat Weapon System</h3>
+            <p>Created melee weapon systems with custom damage scaling, range control, and visual effects. Optimized scripts to prevent unintended teleportation and improve in-game performance.</p>
+            <p class="project-tech">Technologies: Python</p>
+          </article>
+
+          <article class="project-card">
+            <h3>Billing System (C Programming - 1st YEAR)</h3>
+            <p>Created a basic billing system using C that handles item input, calculations, and total cost output. Applied programming logic, conditionals, loops, and user input handling.</p>
+            <p class="project-tech">Technologies: C</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Personal Portfolio. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
