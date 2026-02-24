@@ -120,41 +120,38 @@
       <p>&copy; 2026 Personal Portfolio. All rights reserved.</p>
     </footer>
     <script>
-    const jsonURL = "https://raw.githubusercontent.com/barryallan31234-cmyk/ninja/refs/heads/main/courses.json";
-    const studentList = document.getElementById("course-ul");
-    const searchInput = document.getElementById("course-search-input");
-    let coursesData = [];
+      const jsonURL = "https://raw.githubusercontent.com/barryallan31234-cmyk/ninja/refs/heads/main/courses.json";
+      const courseList = document.getElementById("course-ul");
 
-    fetch(jsonURL)
-      .then(response => response.json())
-      .then(data => {
-        if (data.courses && Array.isArray(data.courses)) {
-          coursesData = data.courses;
-          displayCourses(coursesData);
-        } else {
-          console.error("Expected 'courses' array but got:", data);
-        }
-      })
-      .catch(error => console.error("Error fetching JSON:", error));
+      fetch(jsonURL)
+        .then(res => res.json())
+        .then(data => {
+          displayCourses(data.courses);
+        });
 
-    function displayCourses(courses) {
-      studentList.innerHTML = "";
-      courses.forEach(course => {
-        const listItem = document.createElement("li");
-        listItem.setAttribute("data-year-sem", `${course.year_level} Year - ${course.sem} Sem`);
-        listItem.textContent = `${course.code} - ${course.description} (${course.credit} units)`;
-        studentList.appendChild(listItem);
-      });
-    }
+      function displayCourses(courses) {
+        courseList.innerHTML = "";
 
-    searchInput.addEventListener("input", () => {
-      const keyword = searchInput.value.toLowerCase();
-      const filtered = coursesData.filter(c => 
-        c.description.toLowerCase().includes(keyword) ||
-        c.code.toLowerCase().includes(keyword)
-      );
-      displayCourses(filtered);
-    });
+        courses.forEach(course => {
+          const li = document.createElement("li");
+          li.setAttribute(
+            "data-year-sem",
+            `${course.year_level} Year - ${course.sem} Sem`
+          );
+
+          // course title
+          const title = document.createElement("div");
+          title.textContent = `${course.code} - ${course.description}`;
+
+          // units BELOW (like Technologies in Projects)
+          const units = document.createElement("span");
+          units.textContent = `${course.credit} units`;
+
+          li.appendChild(title);
+          li.appendChild(units);
+          courseList.appendChild(li);
+        });
+      }
     </script>
   </body>
 </html>
