@@ -261,26 +261,35 @@ figcaption {
 }
 
 /* COURSES SECTION */
+#courses {
+  background-color: #f9f9f9;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 2em;
+}
+
 #course-ul {
   list-style: none;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 2em;
   justify-content: center;
+  padding: 0;
 }
 
 #course-ul li {
   background-color: #ecf0f1;
-  padding: 1.2em;
   border: 2px solid #bdc3c7;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5em;
   min-width: 250px;
   max-width: 300px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  gap: 0.5em;
 }
 
 #course-ul li:hover {
@@ -293,9 +302,13 @@ figcaption {
 #course-ul li::before {
   content: attr(data-year-sem);
   font-weight: 600;
-  margin-bottom: 0.5em;
+  font-size: 0.9em;
   color: #2c3e50;
-  text-align: center;
+}
+#course-ul li span {
+  font-style: italic;
+  color: #7f8c8d;
+  font-size: 0.85em;
 }
 
 /*  FOOTER  */
