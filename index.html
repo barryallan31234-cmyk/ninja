@@ -80,6 +80,11 @@
 
       <section id="courses">
         <h2>Courses</h2>
+
+        <div class="course-search">
+          <input type="text" id="courseSearch" placeholder="Search courses..." />
+        </div>
+
         <ul id="course-ul"></ul>
       </section>
       
@@ -115,29 +120,41 @@
       <p>&copy; 2026 Personal Portfolio. All rights reserved.</p>
     </footer>
     <script>
-      const jsonURL = "https://raw.githubusercontent.com/barryallan31234-cmyk/ninja/refs/heads/main/courses.json";
+    const jsonURL = "https://raw.githubusercontent.com/barryallan31234-cmyk/ninja/refs/heads/main/courses.json";
+    const studentList = document.getElementById("course-ul");
+    const searchInput = document.getElementById("course-search-input");
+    let coursesData = [];
 
-      fetch(jsonURL)
+    fetch(jsonURL)
       .then(response => response.json())
       .then(data => {
-        let studentList = document.getElementById("course-ul");
         if (data.courses && Array.isArray(data.courses)) {
-          data.courses.forEach(course => {
-            let listItem = document.createElement("li");
-            listItem.textContent = `${course.code} - ${course.description}`;
-            listItem.setAttribute("data-year-sem", `${course.year_level} Year - ${course.sem} Sem`);
-
-            let unitsSpan = document.createElement("span");
-            unitsSpan.textContent = `(${course.credit} units)`;
-            listItem.appendChild(unitsSpan);
-
-            studentList.appendChild(listItem);
-          });
+          coursesData = data.courses;
+          displayCourses(coursesData);
         } else {
           console.error("Expected 'courses' array but got:", data);
         }
       })
       .catch(error => console.error("Error fetching JSON:", error));
+
+    function displayCourses(courses) {
+      studentList.innerHTML = "";
+      courses.forEach(course => {
+        const listItem = document.createElement("li");
+        listItem.setAttribute("data-year-sem", `${course.year_level} Year - ${course.sem} Sem`);
+        listItem.textContent = `${course.code} - ${course.description} (${course.credit} units)`;
+        studentList.appendChild(listItem);
+      });
+    }
+
+    searchInput.addEventListener("input", () => {
+      const keyword = searchInput.value.toLowerCase();
+      const filtered = coursesData.filter(c => 
+        c.description.toLowerCase().includes(keyword) ||
+        c.code.toLowerCase().includes(keyword)
+      );
+      displayCourses(filtered);
+    });
     </script>
   </body>
 </html>
