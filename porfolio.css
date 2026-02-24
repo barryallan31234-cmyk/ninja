@@ -290,8 +290,8 @@ figcaption {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 0.5em;
-
 
   flex: 1 1 250px;
   min-height: 150px;
@@ -314,6 +314,7 @@ figcaption {
   font-style: italic;
   color: #7f8c8d;
   font-size: 0.85em;
+  margin-top: auto;
 }
 
 /*  FOOTER  */
@@ -327,6 +328,22 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+.direct-email {
+  margin-top: 1em;
+  font-style: italic;
+  text-align: center;
+}
+
+.direct-email a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.direct-email a:hover {
+  text-decoration: underline;
 }
 
 /*  RESPONSIVE DESIGN  */
