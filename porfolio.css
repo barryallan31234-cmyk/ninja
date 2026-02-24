@@ -276,6 +276,7 @@ figcaption {
   gap: 2em;
   justify-content: center;
   padding: 0;
+  align-items: stretch;
 }
 
 #course-ul li {
@@ -290,6 +291,10 @@ figcaption {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+
+
+  flex: 1 1 250px;
+  min-height: 150px;
 }
 
 #course-ul li:hover {
