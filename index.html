@@ -119,6 +119,8 @@
           data.courses.forEach(course => {
             let listItem = document.createElement("li");
             listItem.textContent = `${course.code} - ${course.description} (${course.credit} units)`;
+            //ADD THIS LINE for CSS to show year/sem
+            listItem.setAttribute("data-year-sem", `${course.year_level} Year - ${course.sem} Sem`);
             studentList.appendChild(listItem);
           });
         } else {

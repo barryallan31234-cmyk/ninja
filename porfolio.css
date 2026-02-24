@@ -289,12 +289,13 @@ figcaption {
   border-color: #3498db;
 }
 
-/* Optional: year/sem text styling (make it like card header) */
+/* Year/Sem indicator above course info */
 #course-ul li::before {
   content: attr(data-year-sem);
   font-weight: 600;
   margin-bottom: 0.5em;
   color: #2c3e50;
+  text-align: center;
 }
 
 /*  FOOTER  */
