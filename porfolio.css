@@ -261,45 +261,30 @@ figcaption {
 }
 
 /* COURSES SECTION */
-.courses-container {
+#course-ul {
+  list-style: none;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 1em;
   justify-content: center;
 }
 
-.course-year-sem {
-  flex: 1;
-  min-width: 280px;
-  max-width: 350px;
+#course-ul li {
   background-color: #ecf0f1;
-  padding: 1.5em;
+  padding: 1em;
   border: 2px solid #bdc3c7;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  min-width: 250px;
+  max-width: 300px;
   transition: all 0.3s ease;
 }
 
-.course-year-sem:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+#course-ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
   border-color: #3498db;
-}
-
-.course-year-sem h3 {
-  color: #2c3e50;
-  margin-bottom: 0.75em;
-}
-
-.course-list {
-  list-style: none;
-  padding: 0;
-}
-
-.course-list li {
-  margin-bottom: 0.5em;
-  font-size: 1em;
-  color: #555;
 }
 
 /*  FOOTER  */
