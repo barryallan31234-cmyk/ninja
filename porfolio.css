@@ -204,26 +204,6 @@ figcaption {
   font-style: italic;
 }
 
-/* COURSES SECTION */
-#courses {
-  background-color: #f9f9f9;
-}
-
-#course-list {
-  padding: 1em;
-}
-
-#course-list ul {
-  list-style: none;
-  padding: 0;
-}
-
-#course-list li {
-  margin-bottom: 0.5em;
-  font-size: 1em;
-  color: #555;
-}
-
 /*  CONTACT SECTION  */
 .contact-form {
   max-width: 600px;
@@ -278,6 +258,29 @@ figcaption {
 
 .submit-btn:active {
   background-color: #21618c;
+}
+
+/* COURSES SECTION */
+#courses {
+  background-color: #f9f9f9;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#course-list {
+  padding: 1em;
+}
+
+#course-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+#course-list li {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  color: #555;
 }
 
 /*  FOOTER  */
