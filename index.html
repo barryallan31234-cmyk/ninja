@@ -15,6 +15,7 @@
           <li><a href="#education">Education</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#courses">Courses</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -101,7 +102,7 @@
       <section id="courses">
         <h2>Courses</h2>
         <div id="course-list">
-          <!-- data here -->
+          <ul id="course-ul"></ul>
         </div>
       </section>
     </main>
@@ -115,7 +116,7 @@
       fetch(jsonURL)
       .then(response => response.json())
       .then(data => {
-        let studentList = document.getElementById("course-list");
+        let studentList = document.getElementById("course-ul");
         if (data.courses && Array.isArray(data.courses)) {
           data.courses.forEach(course => {
             let listItem = document.createElement("li");
