@@ -260,6 +260,26 @@ figcaption {
   background-color: #21618c;
 }
 
+/* COURSES SECTION */
+#courses {
+  background-color: #f9f9f9;
+}
+
+#course-list {
+  padding: 1em;
+}
+
+#course-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+#course-list li {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  color: #555;
+}
+
 /*  FOOTER  */
 footer {
   background-color: #2c3e50;

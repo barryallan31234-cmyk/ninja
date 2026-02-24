@@ -97,11 +97,36 @@
 
           <button type="submit" class="submit-btn">Send Message</button>
         </form>
+
+      <section id="courses">
+        <h2>Courses</h2>
+        <div id="course-list">
+          <!-- data here -->
+        </div>
       </section>
     </main>
 
     <footer>
       <p>&copy; 2026 Personal Portfolio. All rights reserved.</p>
     </footer>
+    <script>
+      const jsonURL = "https://raw.githubusercontent.com/barryallan31234-cmyk/ninja/refs/heads/main/courses.json";
+
+      fetch(jsonURL)
+      .then(response => response.json())
+      .then(data => {
+        let studentList = document.getElementById("course-list");
+        if (data.courses && Array.isArray(data.courses)) {
+          data.courses.forEach(course => {
+            let listItem = document.createElement("li");
+            listItem.textContent = `${course.code} - ${course.description} (${course.credit} units)`;
+            studentList.appendChild(listItem);
+          });
+        } else {
+          console.error("Expected 'courses' array but got:", data);
+        }
+      })
+      .catch(error => console.error("Error fetching JSON:", error));
+    </script>
   </body>
 </html>
