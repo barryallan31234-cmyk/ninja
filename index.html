@@ -119,9 +119,13 @@
         if (data.courses && Array.isArray(data.courses)) {
           data.courses.forEach(course => {
             let listItem = document.createElement("li");
-            listItem.textContent = `${course.code} - ${course.description} (${course.credit} units)`;
-            //ADD THIS LINE for CSS to show year/sem
+            listItem.textContent = `${course.code} - ${course.description}`;
             listItem.setAttribute("data-year-sem", `${course.year_level} Year - ${course.sem} Sem`);
+
+            let unitsSpan = document.createElement("span");
+            unitsSpan.textContent = `(${course.credit} units)`;
+            listItem.appendChild(unitsSpan);
+
             studentList.appendChild(listItem);
           });
         } else {
